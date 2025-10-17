@@ -1,0 +1,124 @@
+.pokemon-banner .types{
+    display: flex;
+    gap: 5px;
+}
+
+.pokemon-banner .types .type {
+    background: rgba(255, 255, 255, 0.651);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .9rem;
+    font-weight: bolder;
+    border-radius: 1rem;
+    text-align: center;
+    min-width: 4rem;
+    max-width: 4.7rem;
+    text-transform: capitalize;
+    list-style: none;
+}
+
+.details-seletor{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-weight: bolder;
+    width: 100%;
+    height: 15%;
+
+    --underline-width: 50px; 
+    --underline-transform: translateX(0);
+
+    z-index: 2;
+}
+
+.details-seletor::after{
+    content: '';
+    position: absolute;
+    bottom: 1.3rem;
+    left: 0;
+    height: 3px;
+    background-color: rgb(45, 45, 45);
+
+    width: var(--underline-width); 
+    transform: var(--underline-transform);
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.details-seletor button.active{
+    color: rgb(45, 45, 45);
+}
+
+.details-seletor button{
+    background: none;
+    border: none;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    height: 4rem;
+    width: 6.69rem;
+    color: grey;
+    transition: color 0.3s ease;
+}
+
+#detail-content-container{
+    display: flex;
+    width: 90%;
+    height: 70%;
+    padding-left: 4.6rem;
+    margin-top: .3rem;
+}
+
+.about-info p, .about-values p{
+    display: flex;
+    margin-bottom: 2.3rem;
+    color: grey;
+    font-size: larger;
+}
+
+.about-values p{
+    padding-left: 2.3rem;
+    text-transform: capitalize;
+    color: rgb(45, 45, 45);
+}
+
+.base-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.stat-row{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    height: 2.5rem;
+}
+
+.stats-name{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: grey;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.stats-value{
+    position: absolute;
+    top: -20px;
+    left: var(--stat-position);
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #222;
+    transition: left 0.8s ease-out;
+}
